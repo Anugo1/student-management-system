@@ -1,18 +1,20 @@
 class User {
+  #name;
+  #userId
   constructor(name,userId) {
     if (new.target === User) {
       throw new Error("Don't instantiate this class❌") //defining an abstract class
     }
-    this._name = name // showing encapsulation by using underscores making it private property
-    this._userId = userId // make it a private property
+    this.#name = name // showing encapsulation by using underscores making it private property
+    this.#userId = userId // make it a private property
   }
  //getter for name
   getName (){
-    return this._name
+    return this.#name
   }
  // getter for uderId
  getuserId (){
-  return this._userId
+  return this.#userId
  }
 
   }
@@ -50,7 +52,7 @@ class Admin {
   addstudent(name,userId){
     const existingStudent = this.students.find(student => student.getuserId() === userId);
     if (existingStudent) {
-      console.log(`Student with ID ${id} already exists.`);
+      console.log(`Student with ID ${userId} already exists.`);
       return;
     }
     const newStudent = new Student(name,userId);
@@ -62,13 +64,12 @@ class Admin {
   viewStudentbyId(userId){
     const student = this.students.find(student => student.getuserId() === userId);
     if(!student){
-      console.log(`student with ID:${userId} does not exist`)
-      return;
+      return `student with ID:${userId} does not exist`;
     }
-    console.log(student.viewdetails())
+    return student.viewdetails()
   }
 
-  addGradeofStudent(name,userId){
+  addGradeofStudent(grade,userId){
     const student = this.students.find(student => student.getuserId()=== userId);
     if(!student){
       console.log(`student with ID: ${userId} not found`)
@@ -77,8 +78,11 @@ class Admin {
     student.addGrade(grade)
   }
 }
+ 
+const admin = new Admin()
+admin.addstudent("anugo","001")
 
-
+console.log(admin.viewStudentbyId("001"))
 
 /*const student = new Student('anugo','#19');
 student.addGrade(23)

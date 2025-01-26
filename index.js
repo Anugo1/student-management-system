@@ -98,7 +98,7 @@ class StudentManagementSystem {
     );
     if (!student) {
       console.log(`student with ID:${userId} not found🤷‍♀️❌`);
-      return; // Exit if student is not found
+      return; 
     };
 
     // Add the grade to the student's grades array
@@ -111,16 +111,17 @@ const admin = new StudentManagementSystem();
 
 // Add new students
 admin.addstudent("arinze", "001"); // Adds successfully
-// admin.addstudent("anugo", "001"); // Fails, as ID already exists
-// admin.addstudent("cj", "002"); // Adds successfully
+admin.addstudent("cj", "002"); // Adds successfully
+
+admin.addstudent("anugo", "001"); // Fails, as ID already exists
 
 // Add grades for students
 admin.addGradeofStudent(80, "001"); 
 admin.addGradeofStudent(88, "001"); 
 admin.addGradeofStudent(70, "001"); 
-//admin.addGradeofStudent(80, "002"); 
-// admin.addGradeofStudent(70, "002"); 
+admin.addGradeofStudent(80, "002"); 
+admin.addGradeofStudent(70, "002"); 
 
 // View details of students by ID
 console.log(admin.viewStudentbyId("001")); // Displays details for student with ID 001
-//console.log(admin.viewStudentbyId("002")); // Displays details for student with ID 002
+console.log(admin.viewStudentbyId("002")); // Displays details for student with ID 002

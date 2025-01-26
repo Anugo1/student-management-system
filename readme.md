@@ -74,5 +74,4 @@ Custom behavior for `viewdetails()` in the `Student` class adapts the method to 
 
 - Run `node index.js` 
 
-
-
+- **screenshot of output** It was uploaded as a file in the repository

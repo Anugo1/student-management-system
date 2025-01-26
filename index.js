@@ -26,25 +26,25 @@ class User {
 }
 
 class Student extends User {
-  // Constructor for Student class
+  
   constructor(name, userId) {
     super(name, userId); // Call the parent class constructor (User)
     this._grades = []; // Public property to store student grades
   }
 
-  // Method to add a grade to the student's grades array
+  
   addGrade(grade) {
     this._grades.push(grade);
   }
 
-  // Method to calculate the average of the grades
+ 
   calculateAverage() {
     if (this._grades.length === 0) return 0; // Return 0 if no grades are present
     const total = this._grades.reduce((sum, grade) => sum + grade, 0); // Sum all grades using reduce
     return (total / this._grades.length).toFixed(2); // Return the average rounded to 2 decimal places
   }
 
-  // Method to view the student's details, including grades and average grade
+  // Method to view the student's details
   viewdetails() {
     return `
     name: ${this.getName()} 
@@ -58,7 +58,7 @@ class StudentManagementSystem {
   // private property array to store students
   #students = [];
 
-  // Method to add a new student
+  
   addstudent(name, userId) {
     // Check if a student with the same userId already exists
     const existingStudent = this.#students.find(
@@ -75,7 +75,7 @@ class StudentManagementSystem {
     console.log(`student: ${name} (UserId: ${userId}) has been added successfully😁✨`);
   }
 
-  // Method to view student details by userId
+
   viewStudentbyId(userId) {
     // Find the student with the given userId
     const student = this.#students.find(
@@ -90,7 +90,7 @@ class StudentManagementSystem {
     return student.viewdetails();
   };
 
-  // Method to add a grade for a specific student
+ 
   addGradeofStudent(grade, userId) {
     // Find the student with the given userId
     const student = this.#students.find(
@@ -111,16 +111,16 @@ const admin = new StudentManagementSystem();
 
 // Add new students
 admin.addstudent("arinze", "001"); // Adds successfully
-admin.addstudent("anugo", "001"); // Fails, as ID already exists
-admin.addstudent("cj", "002"); // Adds successfully
+// admin.addstudent("anugo", "001"); // Fails, as ID already exists
+// admin.addstudent("cj", "002"); // Adds successfully
 
 // Add grades for students
 admin.addGradeofStudent(80, "001"); 
 admin.addGradeofStudent(88, "001"); 
 admin.addGradeofStudent(70, "001"); 
-admin.addGradeofStudent(80, "002"); 
-admin.addGradeofStudent(70, "002"); 
+//admin.addGradeofStudent(80, "002"); 
+// admin.addGradeofStudent(70, "002"); 
 
 // View details of students by ID
 console.log(admin.viewStudentbyId("001")); // Displays details for student with ID 001
-console.log(admin.viewStudentbyId("002")); // Displays details for student with ID 002
+//console.log(admin.viewStudentbyId("002")); // Displays details for student with ID 002

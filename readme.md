@@ -74,5 +74,5 @@ Custom behavior for `viewdetails()` in the `Student` class adapts the method to 
 
 - Run `node index.js` 
 
-- **screenshot of output** It was uploaded as a file in the repository
+- **screenshot of output** was uploaded as a file in the repository
 ![OUTPUT](https://github.com/Anugo1/student-management-system/blob/main/index.js%20-%20student-management-system%20-%20Visual%20Studio%20Code%201_26_2025%205_31_11%20PM.png "ScreenShot")
